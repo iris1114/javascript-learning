@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+</head>
+<body>
+    <h1>Array</h1>
+
+
+    <h2>Array - Properties</h2>
+    <h3>1. constructor</h3>
+    <p>Returns the function that created the Array object's prototype.</p>
+    <p>返回陣列物件的原型函數。</p>
+    <script>
+        var fruits = ["Banana", "Orange", "Apple", "Mango"];
+        console.log(fruits.constructor); 
+        //Ans: function Array() { [native code] }
+    </script>
+
+
+    <h3>2. length</h3>
+    <p>Sets or returns the number of elements in an array.</p>
+    <p>返回陣列裡面有多少個元素的數量。</p>
+    <script>
+        var fruits = ["Banana", "Orange", "Apple", "Mango"];
+        console.log(fruits.length);
+            //Ans: 4
+    </script>
+
+
+    <h3>3. prototype</h3>
+    <p>Allows you to add properties and methods to an Array object</p>
+    <p>允許你向陣列添加屬性或方法。</p>
+    <script>
+        Array.prototype.myUcase = function() {
+            var i;
+            for (i = 0; i < this.length; i++) {
+                this[i] = this[i].toUpperCase(); 
+            }
+        };
+
+        function myFunction() {
+            var fruits = ["Banana", "Orange", "Apple", "Mango"];
+            fruits.myUcase();
+            console.log(fruits);
+            //Ans: BANANA,ORANGE,APPLE,MANGO
+        }
+        myFunction();
+    </script>
+
+
+</body>
+</html>
