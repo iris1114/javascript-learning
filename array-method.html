@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array-Method</title>
+</head>
+<body>
+    <h2>Array - Method</h2>
+    
+    <h3>1. concat()</h3>
+    <p>Joins two or more arrays, and returns a copy of the joined arrays.</p>
+    <p>用來合併兩個或多個陣列。</p>
+    <script>
+        var array1 = ['a', 'b', 'c'];
+        var array2 = ['d', 'e', 'f'];
+        var arrayAns = array1.concat(array2);
+
+        console.log("concat()", array3);
+        //Ans: Array ["a", "b", "c", "d", "e", "f"]
+    </script>
+
+    <h3>2. copyWithin()</h3>
+    <p>Copies array elements within the array, to and from specified positions.</p>
+    <p>對陣列的一部分進行拷貝至同一陣列的另一位置並回傳此陣列。</p>
+    <script>
+        var array1 = ['a', 'b', 'c', 'd', 'e'];
+        var arrayAns = array1.copyWithin(0, 3, 4);
+        var arrayAns2 = array1.copyWithin(1,3);
+
+        console.log("copyWithin()-1" ,arrayAns); //Array ["d", "b", "c", "d", "e"]
+        console.log("copyWithin()-2" ,arrayAns2); //Array ["d", "d", "e", "d", "e"]
+
+    </script>
+
+    <h3>3. entries()</h3>
+    <script>
+       var array1 = ['a', 'b', 'c'];
+
+        var iterator1 = array1.entries();
+        console.log (iterator1);
+        console.log(iterator1.next().value);
+        console.log(iterator1.next().value);
+        console.log(iterator1.next().value);
+
+    </script>
+
+
+</body>
+</html>
