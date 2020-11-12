@@ -33,8 +33,7 @@
     <p>允許你向陣列添加屬性或方法。</p>
     <script>
         Array.prototype.myUcase = function() {
-            var i;
-            for (i = 0; i < this.length; i++) {
+            for (let i = 0; i < this.length; i++) {
                 this[i] = this[i].toUpperCase(); 
             }
         };
