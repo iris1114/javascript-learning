@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        #app {
+            margin-top: 50px;
+        }
+        .wrapCollapse dt {
+            display: block;
+        }
+        .wrapCollapse dt a {
+            display: block;
+            padding: 15px;
+            background-color: #adadad;
+            color: #fff;
+        }
+        .wrapCollapse dt a:hover {
+            text-decoration: none;
+        }
+        .wrapCollapse dt a.active {
+            background-color: #3c6382;
+            color: #fff;
+        }
+        .wrapCollapse dd {
+            padding: 0 20px;
+            height: 0;
+            transition: all 0.5s ease;
+            overflow: hidden;
+            opacity: 0;
+        }
+        .wrapCollapse dd.active {
+            height: auto;
+            padding: 10px 20px 20px;
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="wrapCollapse">
+                        <template v-for="(faq, i) in faqs">
+                            <dt><a href="#" :class="{active: currentFaq == i}" @click="open(i)">{{faq.title}}</a></dt>
+                        <dd :class="{active: currentFaq == i}">{{faq.text}}</dd>
+                        </template>					
+                    <div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js"></script>
+    <script>
+        let faqs = [
+            {title: 'Titre 01', text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt adipisci delectus reiciendis! Veniam quo sunt quam quod ratione dolore! Quod tempore provident vitae magni reprehenderit numquam incidunt ipsa libero ipsam!'},
+            {title: 'Titre 02', text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia at quibusdam, repudiandae molestias optio saepe ex nobis impedit, vero doloribus illum. Perspiciatis porro molestias facilis sunt? Excepturi dolorum sed enim.'},
+            {title: 'Titre 03', text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus sint ullam labore? Non, expedita ratione nobis veniam, optio mollitia eum enim deserunt, rerum culpa ipsam totam? Fuga voluptate quod cumque.'},
+        ]
+        let vm = new Vue({
+            el: '#app',
+            data: {
+                faqs: faqs,
+                currentFaq: 0
+            },
+            methods: {
+                open(i) {
+                    this.currentFaq = i
+                }
+            }
+        })
+    </script>
+</body>
+</html>
